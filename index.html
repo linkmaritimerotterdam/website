@@ -335,7 +335,7 @@ document.getElementById("people").innerHTML = BOARD.map(p => `
     <div><span class="role">${esc(p.role)}</span><h4>${esc(p.name)}</h4><p>${esc(p.company)}</p></div></a>`).join("");
 
 document.getElementById("logos").innerHTML = MEMBERS.map(([n, src]) =>
-  `<div class="logo" title="${esc(n)}"><img src="${esc(src)}" alt="${esc(n)}" loading="lazy"></div>`).join("");
+  `<div class="logo" title="${esc(n)}">${src ? `${src ? `<img src="${esc(src)}" alt="${esc(n)}" loading="lazy">` : `<span>${esc(n)}</span>`}` : `<span>${esc(n)}</span>`}</div>`).join("");
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -360,8 +360,7 @@ document.getElementById("joinform").onsubmit = async ev => {
     status.textContent = "  Thank you, your application has been received. We will get back to you by email.";
   } catch (e) {
     const body = ["Membership: " + data.type, "Name: " + data.name, "Email: " + data.email, "Phone: " + data.phone,
-      "Company: " + data.company, "Street: " + data.street, "Postcode and city: " + data.city, "", data.msg].join("
-");
+      "Company: " + data.company, "Street: " + data.street, "Postcode and city: " + data.city, "", data.msg].join("\n");
     status.textContent = "  Sending failed, your email app opens instead.";
     location.href = "mailto:accounting@link-maritime.com?subject=" + encodeURIComponent("New LINK membership: " + data.name) +
       "&body=" + encodeURIComponent(body);
