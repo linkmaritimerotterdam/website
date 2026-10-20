@@ -19,10 +19,10 @@ window.EVENTS = [
 ];
 
 window.BOARD = [
-  { name: "Dorin Mane", role: "Board Member", company: "TOS", photo: "img/board/dorin.jpg", linkedin: "https://www.linkedin.com/in/dorinmane/" },
+  { name: "Jesper van der Harst", role: "President", company: "Friday & Co. Shipbrokers", photo: "img/board/jesper.jpg", linkedin: "https://www.linkedin.com/in/jesper-van-der-harst/" },
   { name: "Sebastiaan Boon", role: "Accounting", company: "Broekman Logistics", photo: "img/board/sebastiaan.jpg", linkedin: "https://www.linkedin.com/in/sebastiaan-boon-744201166/" },
+  { name: "Dorin Mane", role: "Board Member", company: "TOS", photo: "img/board/dorin.jpg", linkedin: "https://www.linkedin.com/in/dorinmane/" },
   { name: "Thom Sneep", role: "Board Member", company: "Royal IHC", photo: "img/board/thom.jpg", linkedin: "https://www.linkedin.com/in/tpsneep/" },
-  { name: "Jesper van der Harst", role: "Board Member", company: "Friday & Co. Shipbrokers", photo: "img/board/jesper.jpg", linkedin: "https://www.linkedin.com/in/jesper-van-der-harst/" },
   { name: "Ryan Verhagen", role: "Board Member", company: "Simwave", photo: "img/board/ryan.jpg", linkedin: "https://www.linkedin.com/in/ryan-verhagen-7668a310a/" }
 ];
 
