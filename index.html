@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LINK Maritime | Network for young maritime professionals in Rotterdam</title>
+<meta name="description" content="LINK is a Rotterdam-based network association for young professionals in the maritime sector. Monthly drinks, dinners and excursions since 1989.">
+<meta property="og:title" content="LINK Maritime">
+<meta property="og:description" content="The next link in your chain. Network association for young maritime professionals in Rotterdam since 1989.">
+<meta property="og:image" content="https://link-maritime.com/img/hero.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a2238; --navy-2:#11314f; --blue:#1592d6; --blue-dark:#0e6fa6; --sand:#f4efe6;
+  --ink:#16222e; --muted:#5a6b7b; --line:#e3e8ee; --bg:#ffffff; --card:#ffffff;
+  --radius:14px; --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:var(--blue-dark)}
+h1,h2,h3{font-family:Archivo,Inter,sans-serif;line-height:1.1;margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.eyebrow{font:600 13px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+section{padding:96px 0}
+section h2{font-size:clamp(30px,4vw,44px);font-weight:800;margin:12px 0 18px}
+.lead{font-size:18px;color:var(--muted);max-width:640px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:.2s}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-dark)}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* nav */
+header{position:fixed;inset:0 0 auto;z-index:20;transition:.25s}
+header.solid{background:rgba(10,34,56,.96);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav img{height:34px;width:auto}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{color:#fff;text-decoration:none;font-weight:500;font-size:15px;opacity:.9}
+.nav ul a:hover{opacity:1}
+.nav .btn{padding:10px 20px;font-size:15px}
+.burger{display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;
+  background:linear-gradient(180deg,rgba(10,34,56,.55) 0%,rgba(10,34,56,.7) 45%,rgba(10,34,56,.97) 100%),url(img/hero.jpg) center/cover}
+.hero .wrap{padding-bottom:90px;width:100%}
+.hero h1{font-size:clamp(44px,8vw,96px);font-weight:800;letter-spacing:-.02em;max-width:900px}
+.hero h1 span{color:#4fb6ee}
+.hero .eyebrow{color:#8fd0f5}
+.hero p{font-size:clamp(17px,2vw,21px);max-width:620px;margin:22px 0 34px;opacity:.92}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:flex;gap:48px;margin-top:56px;flex-wrap:wrap}
+.stats div{font-family:Archivo;font-size:40px;font-weight:800}
+.stats small{display:block;font:500 14px Inter;opacity:.75}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.why div{background:var(--sand);border-radius:var(--radius);padding:18px;font-weight:600}
+.why div{border-left:4px solid var(--blue)}
+.about-img{border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -20px rgba(10,34,56,.35)}
+.about-img img{width:100%;height:100%;object-fit:cover}
+
+/* events */
+.events{background:var(--navy);color:#fff}
+.events .lead{color:rgba(255,255,255,.7)}
+.next{margin:40px 0 50px;background:linear-gradient(120deg,var(--blue),var(--blue-dark));border-radius:20px;padding:36px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+.datebox{background:#fff;color:var(--navy);border-radius:14px;padding:16px 22px;text-align:center;min-width:110px}
+.datebox b{display:block;font:800 44px/1 Archivo}
+.datebox span{font-weight:600;text-transform:uppercase;font-size:14px;letter-spacing:.1em}
+.next h3{font-size:28px;margin-bottom:8px}
+.next p{margin:4px 0;opacity:.95}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.ev{border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:18px 20px;display:flex;gap:16px;align-items:center;transition:.2s}
+.ev:hover{background:rgba(255,255,255,.05)}
+.ev .d{font:800 24px/1 Archivo;color:var(--blue);min-width:52px;text-align:center}
+.ev .d small{display:block;font:600 11px Inter;letter-spacing:.1em;color:rgba(255,255,255,.6);margin-top:4px;text-transform:uppercase}
+.ev h4{margin:0;font-size:16px}
+.ev p{margin:2px 0 0;font-size:14px;color:rgba(255,255,255,.65)}
+.note{margin-top:28px;font-size:15px;color:rgba(255,255,255,.7)}
+.note a{color:#fff}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:10px;margin-top:40px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.gallery .tall{grid-row:span 2}
+.gallery .wide{grid-column:span 2;grid-row:span 2}
+
+/* board */
+.board{background:var(--sand)}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px;margin-top:40px}
+.person{background:var(--card);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;transition:.2s;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.person:hover{transform:translateY(-4px);box-shadow:0 18px 30px -12px rgba(10,34,56,.25)}
+.person img{aspect-ratio:1;object-fit:cover;width:100%}
+.person div{padding:14px 16px 18px}
+.person h4{margin:0;font-size:17px}
+.person p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.person .role{color:var(--blue-dark);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+
+/* members */
+.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:40px}
+.logo{border:1px solid var(--line);border-radius:12px;height:100px;display:flex;align-items:center;justify-content:center;padding:16px;background:#fff}
+.logo img{max-height:64px;max-width:100%;object-fit:contain;filter:grayscale(1);opacity:.75;transition:.2s}
+.logo:hover img{filter:none;opacity:1}
+.company-cta{margin-top:36px;padding:28px;border-radius:var(--radius);background:var(--sand);display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+
+/* join */
+.join{background:linear-gradient(180deg,var(--navy-2),var(--navy));color:#fff}
+.join-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.join .lead{color:rgba(255,255,255,.75)}
+.plans{display:grid;gap:14px;margin-top:28px}
+.plan{border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:20px 22px}
+.plan b{font:800 30px Archivo}
+.plan b small{font:500 14px Inter;opacity:.7}
+.plan h4{margin:0 0 6px;font-size:17px}
+.plan p{margin:6px 0 0;font-size:14px;opacity:.75}
+form{background:#fff;color:var(--ink);border-radius:20px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .full{grid-column:1/-1}
+label{font-size:13px;font-weight:600;color:var(--muted);display:block;margin-bottom:5px}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fbfcfd}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);border-color:transparent}
+form button{border:0;cursor:pointer;font:600 16px Inter}
+form small{color:var(--muted)}
+
+/* footer */
+footer{background:#061726;color:rgba(255,255,255,.75);padding:56px 0 30px;font-size:15px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer h5{color:#fff;font:700 15px Archivo;margin:0 0 12px}
+footer a{color:#fff;text-decoration:none}
+footer a:hover{text-decoration:underline}
+.copy{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:20px;font-size:13px;opacity:.6}
+
+@media (max-width:900px){
+  section{padding:70px 0}
+  .about-grid,.join-grid,.foot{grid-template-columns:1fr;gap:40px}
+  .about-img{aspect-ratio:4/3}
+  .nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:18px}
+  .nav ul.open{display:flex}
+  .burger{display:block}
+  .nav .btn{display:none}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .next{grid-template-columns:1fr;padding:26px}
+  form{grid-template-columns:1fr;padding:22px}
+  .stats{gap:28px}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#"><img src="img/logo.png" alt="LINK Maritime"></a>
+    <ul id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#board">Board</a></li>
+      <li><a href="#members">Members</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#join">Join LINK</a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Rotterdam &middot; since 1989</span>
+    <h1>The next <span>link</span> in your chain.</h1>
+    <p>LINK is the network association for young professionals in the maritime sector. Every month we meet for drinks, dinners, tastings and company visits in and around the port of Rotterdam.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#join">Become a member</a>
+      <a class="btn btn-ghost" href="#events">Upcoming events</a>
+    </div>
+    <div class="stats">
+      <div>1989<small>founded</small></div>
+      <div>Monthly<small>get-togethers</small></div>
+      <div>30+<small>member companies</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">Who we are</span>
+      <h2>An informal network, well known in the maritime community.</h2>
+      <p class="lead">Since 1989 LINK has brought together young professionals from shipping, offshore, shipbuilding, logistics, insurance and everything in between. Our company and personal members meet every month: sailing trips, BBQs, wine, beer and whisky tastings, excursions to maritime companies, fundraising evenings and of course the New Year's drink.</p>
+      <div class="why">
+        <div>Expand your professional network</div>
+        <div>Learn the ins and outs of the sector</div>
+        <div>Share knowledge and experience</div>
+        <div>Do business and meet new friends</div>
+      </div>
+    </div>
+    <div class="about-img"><img src="img/photos/linkmaritime_loos-36.jpg" alt="LINK members at a summer drink" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="events" class="events">
+  <div class="wrap">
+    <span class="eyebrow">Events</span>
+    <h2>Every first Thursday of the month.</h2>
+    <p class="lead">Classic drinks after work, plus a summer dinner, the Annual General Meeting and a few specials every year.</p>
+    <div id="next"></div>
+    <div class="list" id="past"></div>
+    <p class="note">Invitations are sent to members by email. Not a member yet? Come along to one of our drinks to see what LINK is about, just <a href="mailto:info@link-maritime.com">let us know</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Impressions</span>
+    <h2>See you at the next one.</h2>
+    <div class="gallery">
+      <img class="wide" src="img/photos/linkmaritime_loos-22.jpg" alt="" loading="lazy">
+      <img class="tall" src="img/photos/linkmaritime_loos-40.jpg" alt="" loading="lazy">
+      <img src="img/photos/linkmaritime_loos-52.jpg" alt="" loading="lazy">
+      <img src="img/photos/linkmaritime_loos-57.jpg" alt="" loading="lazy">
+      <img src="img/photos/linkmaritime_loos-64.jpg" alt="" loading="lazy">
+      <img class="tall" src="img/photos/linkmaritime_loos-70.jpg" alt="" loading="lazy">
+      <img class="wide" src="img/lustrum.jpg" alt="35 years of LINK Maritime lustrum party" loading="lazy">
+      <img src="img/photos/linkmaritime_loos-75.jpg" alt="" loading="lazy">
+      <img src="img/photos/linkmaritime_loos-81.jpg" alt="" loading="lazy">
+      <img src="img/photos/linkmaritime_loos-14.jpg" alt="" loading="lazy">
+      <img src="img/photos/linkmaritime_loos-59.jpg" alt="" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="board" class="board">
+  <div class="wrap">
+    <span class="eyebrow">The board</span>
+    <h2>Meet the people behind LINK.</h2>
+    <p class="lead">Volunteers from across the maritime sector who organise the events and keep the association running.</p>
+    <div class="people" id="people"></div>
+  </div>
+</section>
+
+<section id="members">
+  <div class="wrap">
+    <span class="eyebrow">Company members</span>
+    <h2>In good company.</h2>
+    <p class="lead">A company membership lets up to five employees join every LINK event, and puts your logo on this page.</p>
+    <div class="logos" id="logos"></div>
+    <div class="company-cta">
+      <div><b>Interested in a company membership?</b><br><span style="color:var(--muted)">Contact us for the possibilities.</span></div>
+      <a class="btn btn-primary" href="mailto:accounting@link-maritime.com?subject=Company%20membership%20LINK">accounting@link-maritime.com</a>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="join">
+  <div class="wrap join-grid">
+    <div>
+      <span class="eyebrow">Join LINK</span>
+      <h2>Become a member.</h2>
+      <p class="lead">Membership runs from October to October.</p>
+      <div class="plans">
+        <div class="plan"><h4>Personal membership</h4><b>&euro;95 <small>per year</small></b><p>For you, at every regular LINK event.</p></div>
+        <div class="plan"><h4>Company membership</h4><b>&euro;595 <small>per year</small></b><p>Up to five employees at every regular event, plus your logo on our website.</p></div>
+      </div>
+      <p class="note">Want to end your membership? Send a message to <a href="mailto:accounting@link-maritime.com">accounting@link-maritime.com</a> before 1 September.</p>
+    </div>
+    <form id="joinform">
+      <div class="full"><label for="type">Membership *</label>
+        <select id="type" required><option>Personal membership</option><option>Company membership</option></select></div>
+      <div><label for="name">Name *</label><input id="name" required></div>
+      <div><label for="email">Email *</label><input id="email" type="email" required></div>
+      <div><label for="phone">Phone *</label><input id="phone" required></div>
+      <div><label for="company">Company</label><input id="company"></div>
+      <div><label for="street">Street *</label><input id="street" required></div>
+      <div><label for="city">Postcode and city *</label><input id="city" required></div>
+      <div class="full"><label for="msg">Message</label><textarea id="msg" rows="3"></textarea></div>
+      <div class="full"><button class="btn btn-primary" type="submit">Send application</button>
+        <small>&nbsp; Opens your email app with the details filled in.</small></div>
+    </form>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="img/logo.png" alt="LINK Maritime" style="height:36px;margin-bottom:16px">
+        <p>Network association for young professionals in the maritime sector, Rotterdam.</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        General: <a href="mailto:info@link-maritime.com">info@link-maritime.com</a><br>
+        Accounting: <a href="mailto:accounting@link-maritime.com">accounting@link-maritime.com</a><br><br>
+        Post Office Box 23025<br>3001 KA Rotterdam<br>The Netherlands
+      </div>
+      <div>
+        <h5>Follow us</h5>
+        <a href="https://www.linkedin.com/groups/73312/" target="_blank" rel="noopener">LinkedIn group</a>
+      </div>
+    </div>
+    <div class="copy">&copy; <span id="year"></span> LINK Maritime, Rotterdam</div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = (d, o) => new Date(d + "T12:00:00").toLocaleDateString("en-GB", o);
+const today = new Date().toISOString().slice(0, 10);
+
+const upcoming = EVENTS.filter(e => e.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+const past = EVENTS.filter(e => e.date < today);
+const next = upcoming[0];
+document.getElementById("next").innerHTML = next ? `
+  <div class="next">
+    <div class="datebox"><b>${fmt(next.date, {day: "2-digit"})}</b><span>${fmt(next.date, {month: "short"})} ${fmt(next.date, {year: "numeric"})}</span></div>
+    <div><span class="eyebrow" style="color:#fff;opacity:.8">Next event</span>
+      <h3>${esc(next.title)}</h3>
+      <p>${esc(next.venue)}${next.time ? " &middot; from " + esc(next.time) : ""}</p>
+      ${next.text ? `<p>${esc(next.text)}</p>` : ""}</div>
+  </div>` : `
+  <div class="next"><div class="datebox"><b>1st</b><span>Thursday</span></div>
+    <div><span class="eyebrow" style="color:#fff;opacity:.8">Next event</span>
+      <h3>Announced soon</h3><p>Our next get-together is shared with members by email. Follow the LinkedIn group for updates.</p></div></div>`;
+document.getElementById("past").innerHTML = past.slice(0, 9).map(e => `
+  <div class="ev"><div class="d">${fmt(e.date, {day: "2-digit"})}<small>${fmt(e.date, {month: "short"})} '${fmt(e.date, {year: "2-digit"})}</small></div>
+  <div><h4>${esc(e.title)}</h4><p>${esc(e.venue)}</p></div></div>`).join("");
+
+document.getElementById("people").innerHTML = BOARD.map(p => `
+  <a class="person" href="${esc(p.linkedin)}" target="_blank" rel="noopener">
+    <img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">
+    <div><span class="role">${esc(p.role)}</span><h4>${esc(p.name)}</h4><p>${esc(p.company)}</p></div></a>`).join("");
+
+document.getElementById("logos").innerHTML = MEMBERS.map(([n, src]) =>
+  `<div class="logo" title="${esc(n)}"><img src="${esc(src)}" alt="${esc(n)}" loading="lazy"></div>`).join("");
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const header = document.querySelector("header");
+const onScroll = () => header.classList.toggle("solid", scrollY > 40);
+addEventListener("scroll", onScroll); onScroll();
+document.querySelectorAll("#menu a").forEach(a => a.onclick = () => document.getElementById("menu").classList.remove("open"));
+
+document.getElementById("joinform").onsubmit = ev => {
+  ev.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const body = [
+    "Membership: " + v("type"), "Name: " + v("name"), "Email: " + v("email"), "Phone: " + v("phone"),
+    "Company: " + v("company"), "Street: " + v("street"), "Postcode and city: " + v("city"), "", v("msg")
+  ].join("\n");
+  location.href = "mailto:accounting@link-maritime.com?subject=" + encodeURIComponent("New LINK membership: " + v("name")) +
+    "&body=" + encodeURIComponent(body);
+};
+</script>
+</body>
+</html>
