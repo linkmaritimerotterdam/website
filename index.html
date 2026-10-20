@@ -265,7 +265,7 @@ footer a:hover{text-decoration:underline}
         <div class="plan"><h4>Personal membership</h4><b>&euro;95 <small>per year</small></b><p>For you, at every regular LINK event.</p></div>
         <div class="plan"><h4>Company membership</h4><b>&euro;650 <small>per year</small></b><p>Up to five employees at every regular event, plus your logo on our website.</p></div>
       </div>
-      <p class="note">Want to end your membership? Send a message to <a href="mailto:accounting@link-maritime.com">accounting@link-maritime.com</a> before 1 September.</p>
+      <p class="note">Want to end your membership? Send a message to <a href="mailto:info@link-maritime.com">info@link-maritime.com</a> before 1 September.</p>
     </div>
     <form id="joinform">
       <div class="full"><label for="type">Membership *</label>
@@ -292,8 +292,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div>
         <h5>Contact</h5>
-        General: <a href="mailto:info@link-maritime.com">info@link-maritime.com</a><br>
-        Accounting: <a href="mailto:accounting@link-maritime.com">accounting@link-maritime.com</a><br><br>
+        <a href="mailto:info@link-maritime.com">info@link-maritime.com</a><br><br>
         Post Office Box 23025<br>3001 KA Rotterdam<br>The Netherlands
       </div>
       <div>
@@ -362,7 +361,7 @@ document.getElementById("joinform").onsubmit = async ev => {
     const body = ["Membership: " + data.type, "Name: " + data.name, "Email: " + data.email, "Phone: " + data.phone,
       "Company: " + data.company, "Street: " + data.street, "Postcode and city: " + data.city, "", data.msg].join("\n");
     status.textContent = "  Sending failed, your email app opens instead.";
-    location.href = "mailto:accounting@link-maritime.com?subject=" + encodeURIComponent("New LINK membership: " + data.name) +
+    location.href = "mailto:info@link-maritime.com?subject=" + encodeURIComponent("New LINK membership: " + data.name) +
       "&body=" + encodeURIComponent(body);
   } finally { button.disabled = false; }
 };
