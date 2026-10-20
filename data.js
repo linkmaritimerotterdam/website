@@ -20,7 +20,7 @@ window.EVENTS = [
 
 window.BOARD = [
   { name: "Jesper van der Harst", role: "President", company: "Friday & Co. Shipbrokers", photo: "img/board/jesper.jpg", linkedin: "https://www.linkedin.com/in/jesper-van-der-harst/" },
-  { name: "Sebastiaan Boon", role: "Accounting", company: "Broekman Logistics", photo: "img/board/sebastiaan.jpg", linkedin: "https://www.linkedin.com/in/sebastiaan-boon-744201166/" },
+  { name: "Sebastiaan Boon", role: "Accounting", company: "Kasparov Finance & BI", photo: "img/board/sebastiaan.jpg", linkedin: "https://www.linkedin.com/in/sebastiaan-boon-744201166/" },
   { name: "Dorin Mane", role: "Board Member", company: "TOS", photo: "img/board/dorin.jpg", linkedin: "https://www.linkedin.com/in/dorinmane/" },
   { name: "Thom Sneep", role: "Board Member", company: "Royal IHC", photo: "img/board/thom.jpg", linkedin: "https://www.linkedin.com/in/tpsneep/" },
   { name: "Ryan Verhagen", role: "Board Member", company: "Simwave", photo: "img/board/ryan.jpg", linkedin: "https://www.linkedin.com/in/ryan-verhagen-7668a310a/" }
@@ -28,34 +28,34 @@ window.BOARD = [
 
 window.MEMBERS = [
   ["Acta Marine", "img/members/acta-marine.jpg"],
+  ["AKD", ""],
   ["Amlin", "img/members/amlin.png"],
   ["Anchor", "img/members/anchor.png"],
   ["Aon", "img/members/aon.png"],
-  ["Bayards", "img/members/bayards.jpg"],
   ["Beequip", "img/members/beequip.jpg"],
   ["BigLift", "img/members/biglift.png"],
   ["Bonn & Mees", "img/members/bonn-mees.jpg"],
   ["Boskalis", "img/members/boskalis.png"],
   ["Broekman Logistics", "img/members/broekman.png"],
+  ["Bureau Veritas", ""],
   ["Cory", "img/members/cory.png"],
   ["CSHT", "img/members/csht.jpg"],
+  ["DUPI Underwriting Agencies", ""],
   ["Friday & Co. Shipbrokers", "img/members/friday.jpg"],
   ["Holland Shipyards Group", "img/members/holland-shipyards.png"],
+  ["Koninklijke Van der Wees", ""],
   ["Krommenhoek", "img/members/krommenhoek.png"],
   ["LKL", "img/members/lkl.jpg"],
-  ["Mammoet", "img/members/mammoet.png"],
-  ["MEL", "img/members/mel.png"],
-  ["Navingo", "img/members/navingo.jpg"],
+  ["M-Shipping", ""],
+  ["MCSI Rotterdam", ""],
+  ["RHB Stevedoring", ""],
   ["Roll Group", "img/members/roll-group.png"],
   ["Royal IHC", "img/members/royal-ihc.jpg"],
   ["SAL Heavy Lift", "img/members/sal.png"],
   ["Simwave", "img/members/simwave.png"],
   ["Sledge Hammer Engineering", "img/members/sledge-hammer.png"],
-  ["Stolt-Nielsen", "img/members/stolt-nielsen.png"],
   ["THB Verhoef", "img/members/thb-verhoef.png"],
   ["TOS", "img/members/tos.png"],
-  ["Universal Africa Lines", "img/members/ual.jpg"],
   ["Value", "img/members/value.png"],
-  ["Van Loon Shipping", "img/members/van-loon.png"],
-  ["VSTEP", "img/members/vstep.png"]
+  ["Van Loon Shipping", "img/members/van-loon.png"]
 ];
