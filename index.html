@@ -278,7 +278,7 @@ footer a:hover{text-decoration:underline}
       <div><label for="city">Postcode and city *</label><input id="city" required></div>
       <div class="full"><label for="msg">Message</label><textarea id="msg" rows="3"></textarea></div>
       <div class="full"><button class="btn btn-primary" type="submit">Send application</button>
-        <small>&nbsp; Opens your email app with the details filled in.</small></div>
+        <small id="formstatus">&nbsp; We will get back to you by email.</small></div>
     </form>
   </div>
 </section>
@@ -344,15 +344,28 @@ const onScroll = () => header.classList.toggle("solid", scrollY > 40);
 addEventListener("scroll", onScroll); onScroll();
 document.querySelectorAll("#menu a").forEach(a => a.onclick = () => document.getElementById("menu").classList.remove("open"));
 
-document.getElementById("joinform").onsubmit = ev => {
+document.getElementById("joinform").onsubmit = async ev => {
   ev.preventDefault();
+  const form = ev.target, status = document.getElementById("formstatus"), button = form.querySelector("button");
   const v = id => document.getElementById(id).value.trim();
-  const body = [
-    "Membership: " + v("type"), "Name: " + v("name"), "Email: " + v("email"), "Phone: " + v("phone"),
-    "Company: " + v("company"), "Street: " + v("street"), "Postcode and city: " + v("city"), "", v("msg")
-  ].join("\n");
-  location.href = "mailto:accounting@link-maritime.com?subject=" + encodeURIComponent("New LINK membership: " + v("name")) +
-    "&body=" + encodeURIComponent(body);
+  const data = {};
+  ["type", "name", "email", "phone", "company", "street", "city", "msg"].forEach(id => data[id] = v(id));
+  button.disabled = true; status.textContent = "  Sending...";
+  try {
+    const r = await fetch("https://link-form.link-form.workers.dev", {
+      method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data)
+    });
+    if (!r.ok) throw new Error(r.status);
+    form.reset();
+    status.textContent = "  Thank you, your application has been received. We will get back to you by email.";
+  } catch (e) {
+    const body = ["Membership: " + data.type, "Name: " + data.name, "Email: " + data.email, "Phone: " + data.phone,
+      "Company: " + data.company, "Street: " + data.street, "Postcode and city: " + data.city, "", data.msg].join("
+");
+    status.textContent = "  Sending failed, your email app opens instead.";
+    location.href = "mailto:accounting@link-maritime.com?subject=" + encodeURIComponent("New LINK membership: " + data.name) +
+      "&body=" + encodeURIComponent(body);
+  } finally { button.disabled = false; }
 };
 </script>
 </body>
