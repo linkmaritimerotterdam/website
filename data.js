@@ -2,6 +2,8 @@
 // Events: newest first. Set "upcoming": true for an announced event, it then shows at the top of the page.
 
 window.EVENTS = [
+  { date: "2026-11-05", title: "Link Classic Drinks", venue: "De Ballentent, Parkkade 1, Rotterdam", time: "18:30",
+    text: "Our November classic on the Maas, with a view on the river and the ships passing by." },
   { date: "2026-10-01", title: "Annual General Meeting", venue: "Walsjérôt, Bentinckplein 5, Rotterdam", time: "18:30",
     text: "Our yearly members' meeting in a wine tasting setup. The formal part is short and focused, the wines at Walsjérôt do the rest." },
   { date: "2026-09-03", title: "Link Classic Drinks", venue: "Tapperij De Vijgeboom, Oude Binnenweg 146, Rotterdam", time: "18:30",
